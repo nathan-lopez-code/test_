@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fruits.apps.FruitsConfig',
-    'api_fruits.apps.ApiFruitsConfig',
 ]
 
 MIDDLEWARE = [
