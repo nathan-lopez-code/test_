@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div>
+        {% if fruit.image %} <li><img src="{{ fruit.image.url }}" alt=""></li> {% endif %}
+        <h1>{{ fruit.name }}</h1>
+        <p>{{ fruit.description }}</p>
+        <a href="{% url 'fruits_app:modification_fruit' fruit.pk %}">Modifier</a>
+        <a href="{% url 'fruits_app:supprimer_fruit' fruit.pk %}">Supprimer</a>
+    </div>
+
+{% endblock %}

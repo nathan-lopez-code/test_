@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titre %} Bienvenue sur Fruitty {% endblock titre %}</title>
+    <!-- integration de bootstrap 5 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+</head>
+<body>
+
+    <style>
+        .container-fluid, .navbar {
+            display: flex;
+            justify-content: center;
+        }
+        .logo-container {
+            width: 200px;
+            height: 200px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid ">
+               <ul class="navbar-nav">
+                   <li class="nav-item"><a href="{% url 'fruits_app:create_fruit' %}">Creer un nouveau fruit</a></li>
+                   <li class="nav-item"><a href="{% url 'fruits_app:list_fruit' %}">Lister tout le fruit</a></li>
+               </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container mt-3">
+        {% block content %}
+            {% if all_fruit %}
+
+                {% for f in all_fruit %}
+                <li>
+                    <a href="{% url 'fruits_app:detail_fruit'  f.pk %}">{{ f.name }}</a>
+                </li>
+                {% endfor %}
+            {% endif %}
+        {% endblock content %}
+    </div>
+
+
+
+    {% block java_script %}
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+    {% endblock java_script %}
+</body>
+</html>
