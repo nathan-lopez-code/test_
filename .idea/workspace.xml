@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fe68c3c-cdcb-4c15-9ac7-e729c07f0c80" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fruits/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/fruits/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fruits/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fruits/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fruitty/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/fruitty/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -97,7 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1755347234003</updated>
-      <workItem from="1755347235150" duration="6118000" />
+      <workItem from="1755347235150" duration="9599000" />
     </task>
     <servers />
   </component>

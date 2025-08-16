@@ -12,24 +12,8 @@
 
 </head>
 <body>
-
-    <style>
-        .container-fluid, .navbar {
-            display: flex;
-            align-content: center;
-        }
-        .logo-container {
-            width: 200px;
-            height: 200px;
-        }
-
-        .navbar-nav {
-            display: flex;
-            justify-content: space-between;
-        }
-    </style>
-
     <header>
+        <h2>Petite navigation</h2>
         <nav class="navbar">
             <div class="container-fluid ">
                <ul class="navbar-nav">
@@ -42,6 +26,7 @@
 
 
     <div class="container mt-3">
+        <h3 > liste de fruit</h3>
         {% block content %}
             {% if all_fruit %}
 

@@ -1,8 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.template.defaulttags import csrf_token
+from rest_framework import viewsets, renderers
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from fruits.forms import CreateFruit
 from fruits.models import Fruit
+from fruits.serializer import FruitSerializer
 
 
 def index(request):
@@ -36,6 +41,7 @@ def delete_fruit(request, pk):
 
     messages.info(request, f"le fruit : {name_fuit} a ete supprimer avec success")
     return redirect("fruits_app:home_page")
+
 
 def create_fruit(request):
     """
@@ -114,3 +120,20 @@ def liste_fruit(request):
     all_fruit = Fruit.objects.all()
 
     return render(request, 'liste_fruit.html', {'all_fruit': all_fruit})
+
+
+class ListeFruitApi(viewsets.ModelViewSet):
+    queryset = Fruit.objects.all()
+    serializer_class = FruitSerializer()
+
+
+class FruitViewSet(viewsets.ModelViewSet):
+
+    queryset = Fruit.objects.all()
+    serializer_class = FruitSerializer
+
+
+    @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
+    def highlight(self, request, *args, **kwargs):
+        fruit = self.get_object()
+        return Response(fruit.highlighted)
